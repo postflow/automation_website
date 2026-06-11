@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спасибо — Process & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0c1014;
+    --bg-soft: #11161c;
+    --panel: #161d25;
+    --line: #232c36;
+    --text: #e9edf1;
+    --text-dim: #8d99a6;
+    --accent: #5ee6c8;
+    --accent-2: #ffb15c;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Inter',sans-serif; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    display:flex; align-items:center; justify-content:center;
+    min-height:100vh; padding:32px;
+  }
+  .box{
+    text-align:center; max-width:520px;
+    border:1px solid var(--line); border-radius:8px;
+    padding:64px 48px;
+    background:linear-gradient(180deg, var(--panel), var(--bg-soft));
+    position:relative; overflow:hidden;
+  }
+  .box::before{
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(94,230,200,0.12), transparent 60%);
+  }
+  .box > *{ position:relative; z-index:1; }
+  .check{
+    width:64px; height:64px; border:2px solid var(--accent); border-radius:50%;
+    display:grid; place-items:center; margin:0 auto 24px;
+    font-size:1.8rem;
+  }
+  h1{ font-family:'Space Grotesk',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:12px; }
+  p{ color:var(--text-dim); margin-bottom:32px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--accent); color:#08120f; font-weight:600; font-size:0.92rem;
+    padding:11px 22px; border-radius:4px; border:none; cursor:pointer;
+    text-decoration:none; transition:transform .15s ease, box-shadow .15s ease;
+    font-family:'Space Grotesk',sans-serif;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 24px -8px rgba(94,230,200,0.5); }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="check">&#10003;</div>
+  <h1>Спасибо за заявку!</h1>
+  <p>Мы получили ваше сообщение и свяжемся с вами в ближайшее время.</p>
+  <a href="/" class="btn">Вернуться на сайт</a>
+</div>
+</body>
+</html>

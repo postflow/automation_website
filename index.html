@@ -264,6 +264,24 @@
   .contact-box p{ color:var(--text-dim); max-width:50ch; margin:0 auto 32px; }
   @media(max-width:600px){ .contact-box{ padding:48px 24px; } }
 
+  /* ===== Form ===== */
+  .form-group{ margin-bottom:18px; text-align:left; }
+  .form-group input,
+  .form-group textarea{
+    width:100%; padding:14px 18px;
+    background:var(--bg); border:1px solid var(--line); border-radius:var(--radius);
+    color:var(--text); font-family:'Inter',sans-serif; font-size:0.96rem;
+    transition:border-color .2s, box-shadow .2s;
+    outline:none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 1px var(--accent), 0 0 16px -4px rgba(94,230,200,0.3);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder{ color:var(--text-dim); }
+
   footer{ padding:32px 0; }
   footer .wrap{
     display:flex; justify-content:space-between; align-items:center;
@@ -476,7 +494,25 @@
       <div class="eyebrow" style="justify-content:center;">Контакты</div>
       <h2>Обсудим автоматизацию вашего бизнеса</h2>
       <p>Расскажите о своих задачах, и мы предложим решения, которые помогут сократить затраты и повысить эффективность компании.</p>
-      <a href="mailto:hello@example.com" class="btn">Получить консультацию</a>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;">
+          <label>Don't fill this: <input name="bot-field"></label>
+        </p>
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Телефон">
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Опишите задачу..." rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Получить консультацию</button>
+      </form>
     </div>
   </div>
 </section>
